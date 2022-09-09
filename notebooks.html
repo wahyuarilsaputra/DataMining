@@ -502,7 +502,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-afa4f0a7-f256-4340-993e-7da9ab2d69cf">
+  <div id="df-08116e93-58d3-4d39-8a7e-0c9004fbba72">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -600,7 +600,7 @@ For example, here’s some sample Matplotlib code:</p>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-afa4f0a7-f256-4340-993e-7da9ab2d69cf')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-08116e93-58d3-4d39-8a7e-0c9004fbba72')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -651,12 +651,12 @@ For example, here’s some sample Matplotlib code:</p>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-afa4f0a7-f256-4340-993e-7da9ab2d69cf button.colab-df-convert');
+          document.querySelector('#df-08116e93-58d3-4d39-8a7e-0c9004fbba72 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-afa4f0a7-f256-4340-993e-7da9ab2d69cf');
+          const element = document.querySelector('#df-08116e93-58d3-4d39-8a7e-0c9004fbba72');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -732,7 +732,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3952fe68-5fc0-4fc8-9807-86521c26edb1">
+  <div id="df-c39883bb-69d9-46c8-a889-edfb4ddac227">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -852,7 +852,7 @@ For example, here’s some sample Matplotlib code:</p>
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3952fe68-5fc0-4fc8-9807-86521c26edb1')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c39883bb-69d9-46c8-a889-edfb4ddac227')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -903,12 +903,12 @@ For example, here’s some sample Matplotlib code:</p>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-3952fe68-5fc0-4fc8-9807-86521c26edb1 button.colab-df-convert');
+          document.querySelector('#df-c39883bb-69d9-46c8-a889-edfb4ddac227 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3952fe68-5fc0-4fc8-9807-86521c26edb1');
+          const element = document.querySelector('#df-c39883bb-69d9-46c8-a889-edfb4ddac227');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -942,6 +942,7 @@ For example, here’s some sample Matplotlib code:</p>
 <span class="n">sepalWidth</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sepal_width</span>
 <span class="n">petalLength</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">petal_length</span>
 <span class="n">petalWidth</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">petal_width</span>
+<span class="n">spesies</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">species</span>
 </pre></div>
 </div>
 </div>
@@ -952,6 +953,7 @@ For example, here’s some sample Matplotlib code:</p>
 <span class="n">ab</span> <span class="o">=</span> <span class="n">sepalWidth</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ac</span> <span class="o">=</span> <span class="n">petalLength</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ad</span> <span class="o">=</span> <span class="n">petalWidth</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">spesies</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1002,24 +1004,35 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xa</span><span class="p">)</span>
-<span class="n">fb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xb</span><span class="p">)</span>
-<span class="n">fc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xc</span><span class="p">)</span>
-<span class="n">fd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xd</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataa1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">:</span><span class="n">xa</span><span class="p">}</span>
+<span class="n">dataa2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">:</span><span class="n">xb</span><span class="p">}</span>
+<span class="n">dataa3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">:</span><span class="n">xc</span><span class="p">}</span>
+<span class="n">dataa4</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">:</span><span class="n">xd</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">fa</span><span class="p">,</span> <span class="n">fb</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">fd</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xa</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">])</span>
+<span class="n">fb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xb</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">])</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xc</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tepal_length&#39;</span><span class="p">])</span>
+<span class="n">fd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">xd</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tepal_width&#39;</span><span class="p">])</span>
+<span class="n">spe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">fa</span><span class="p">,</span> <span class="n">fb</span><span class="p">,</span> <span class="n">fc</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">spe</span><span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datalist</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-311a3928-1e11-4bec-b074-01b7ab4e57d1">
+  <div id="df-3a9e1926-3fab-4ea3-aca7-1334ea7d1a1d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1039,10 +1052,11 @@ For example, here’s some sample Matplotlib code:</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>0</th>
-      <th>0</th>
-      <th>0</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>tepal_length</th>
+      <th>tepal_width</th>
+      <th>Species</th>
     </tr>
   </thead>
   <tbody>
@@ -1052,6 +1066,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>2.0</td>
       <td>0.0</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1059,6 +1074,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>2.0</td>
       <td>0.0</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1066,6 +1082,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>2.0</td>
       <td>0.0</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1073,6 +1090,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>2.0</td>
       <td>0.0</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1080,9 +1098,11 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>2.0</td>
       <td>0.0</td>
+      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1094,6 +1114,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>3.0</td>
       <td>3.0</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1101,6 +1122,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>3.0</td>
       <td>3.0</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>147</th>
@@ -1108,6 +1130,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>3.0</td>
       <td>3.0</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>148</th>
@@ -1115,6 +1138,7 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>3.0</td>
       <td>3.0</td>
+      <td>Iris-virginica</td>
     </tr>
     <tr>
       <th>149</th>
@@ -1122,12 +1146,13 @@ For example, here’s some sample Matplotlib code:</p>
       <td>3.0</td>
       <td>3.0</td>
       <td>2.0</td>
+      <td>Iris-virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 4 columns</p>
+<p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-311a3928-1e11-4bec-b074-01b7ab4e57d1')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3a9e1926-3fab-4ea3-aca7-1334ea7d1a1d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1178,12 +1203,12 @@ For example, here’s some sample Matplotlib code:</p>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-311a3928-1e11-4bec-b074-01b7ab4e57d1 button.colab-df-convert');
+          document.querySelector('#df-3a9e1926-3fab-4ea3-aca7-1334ea7d1a1d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-311a3928-1e11-4bec-b074-01b7ab4e57d1');
+          const element = document.querySelector('#df-3a9e1926-3fab-4ea3-aca7-1334ea7d1a1d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1206,16 +1231,16 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datalist</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">c8fbb625ebca</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out.csv&#39;</span><span class="p">)</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">AttributeError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">7943</span><span class="n">dae48e6f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">datalist</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out.csv&#39;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;frame&#39; is not defined
+<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;to_csv&#39;
 </pre></div>
 </div>
 </div>

@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-frame.to_csv('out.csv')
+datalist.to_csv('out.csv')
 ------------------
 
 [0;31m[0m
-[0;31mNameError[0mTraceback (most recent call last)
-[0;32m<ipython-input-19-c8fbb625ebca>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mframe[0m[0;34m.[0m[0mto_csv[0m[0;34m([0m[0;34m'out.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mAttributeError[0mTraceback (most recent call last)
+[0;32m<ipython-input-20-7943dae48e6f>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mdatalist[0m[0;34m.[0m[0mto_csv[0m[0;34m([0m[0;34m'out.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'frame' is not defined
-NameError: name 'frame' is not defined
+[0;31mAttributeError[0m: 'list' object has no attribute 'to_csv'
+AttributeError: 'list' object has no attribute 'to_csv'
 
