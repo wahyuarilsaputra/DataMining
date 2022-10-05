@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; 20-055 Penambangan Data</title>
+    <title>Tugas 4 : Probability &#8212; 20-055 Penambangan Data</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="Tugas5.html" />
+    <link rel="next" title="Tugas 5 : K-Means Clustering" href="Tugas5.html" />
     <link rel="prev" title="Tugas 3 : KNN" href="Tugas3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas1.html">
    Tugas 1 : Dissimiliarity
@@ -127,6 +127,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas3.html">
    Tugas 3 : KNN
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tugas 4 : Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas5.html">
+   Tugas 5 : K-Means Clustering
   </a>
  </li>
 </ul>
@@ -313,50 +323,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Tugas 4 : Probability</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -364,7 +347,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>##Tugas 4 : Probability</p>
+  <section id="tugas-4-probability">
+<h1>Tugas 4 : Probability<a class="headerlink" href="#tugas-4-probability" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -391,7 +375,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-bb28c1e3-efb5-4529-8f30-f454407f5b2b">
+  <div id="df-60731c10-33af-410f-a6c1-e4ed9fed6556">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -462,7 +446,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-bb28c1e3-efb5-4529-8f30-f454407f5b2b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-60731c10-33af-410f-a6c1-e4ed9fed6556')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -513,12 +497,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-bb28c1e3-efb5-4529-8f30-f454407f5b2b button.colab-df-convert');
+          document.querySelector('#df-60731c10-33af-410f-a6c1-e4ed9fed6556 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-bb28c1e3-efb5-4529-8f30-f454407f5b2b');
+          const element = document.querySelector('#df-60731c10-33af-410f-a6c1-e4ed9fed6556');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -669,6 +653,7 @@ Accuracy of the Naive Bayes Clasification is:  0.9333333333333333
 </div>
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -707,7 +692,7 @@ Accuracy of the Naive Bayes Clasification is:  0.9333333333333333
     <a class='right-next' id="next-link" href="Tugas5.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Tugas 5 : K-Means Clustering</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
