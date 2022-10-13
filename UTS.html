@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tugas 6 : UTS &#8212; 20-055 Penambangan Data</title>
+    <title>Tugas : UTS &#8212; 20-055 Penambangan Data</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -145,7 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tugas 6 : UTS
+   Tugas : UTS
   </a>
  </li>
 </ul>
@@ -344,7 +344,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tugas 6 : UTS</h1>
+                <h1>Tugas : UTS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -356,8 +356,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="tugas-6-uts">
-<h1>Tugas 6 : UTS<a class="headerlink" href="#tugas-6-uts" title="Permalink to this headline">#</a></h1>
+  <section id="tugas-uts">
+<h1>Tugas : UTS<a class="headerlink" href="#tugas-uts" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -388,7 +388,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a0ba095d-a94c-4443-9f2e-b86d328ae68d">
+  <div id="df-784e6b02-48f4-4bc4-963d-47b1fb9911d2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -568,7 +568,7 @@ title="Print to PDF"
 </table>
 <p>116 rows × 10 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a0ba095d-a94c-4443-9f2e-b86d328ae68d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-784e6b02-48f4-4bc4-963d-47b1fb9911d2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -619,12 +619,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a0ba095d-a94c-4443-9f2e-b86d328ae68d button.colab-df-convert');
+          document.querySelector('#df-784e6b02-48f4-4bc4-963d-47b1fb9911d2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a0ba095d-a94c-4443-9f2e-b86d328ae68d');
+          const element = document.querySelector('#df-784e6b02-48f4-4bc4-963d-47b1fb9911d2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -648,20 +648,112 @@ title="Print to PDF"
 <p>#Naive Bayes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">82</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="n">gauss</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">gauss</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<span class="n">nvclassifier</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nvclassifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">6</span><span class="n">d605a5b6797</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">gauss</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">gauss</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">nvclassifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 1 1 1 2 1 1 2 1 1 1 1 1 1 1 2 1 1 1 1 2 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_compare</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">y_compare</span><span class="p">[:</span><span class="mi">5</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 1],
+       [1, 1],
+       [2, 1],
+       [2, 1],
+       [1, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[10  1]
+ [ 9  4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">corrPred</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">falsePred</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="ne">NameError</span>: name &#39;X_train&#39; is not defined
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">corrPred</span> <span class="o">+=</span><span class="n">cm</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">falsePred</span> <span class="o">+=</span> <span class="n">cm</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correct predictions: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;False predictions&#39;</span><span class="p">,</span> <span class="n">falsePred</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Akurasi Dari metode the Decision Tree Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="o">/</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correct predictions:  14
+False predictions 10
+
+Akurasi Dari metode the Decision Tree Clasification adalah:  0.5833333333333334
 </pre></div>
 </div>
 </div>
@@ -686,7 +778,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/UTS_8_0.png" src="_images/UTS_8_0.png" />
+<img alt="_images/UTS_15_0.png" src="_images/UTS_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -728,86 +820,14 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_lab</span><span class="p">,</span> <span class="n">test_pred_decision_tree</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Akurasi Dari metode the Decision Tree Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_lab</span><span class="p">,</span> <span class="n">test_pred_decision_tree</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.574468085106383
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi Dari metode the Decision Tree Clasification adalah:  0.574468085106383
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>  <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">training</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
-	<span class="n">clf</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
-	<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-	<span class="n">training_score</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-	<span class="n">test_score</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-	<span class="n">K</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-
-	<span class="n">training</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">training_score</span><span class="p">)</span>
-	<span class="n">test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_score</span><span class="p">)</span>
-	<span class="n">scores</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">training_score</span><span class="p">,</span> <span class="n">test_score</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;k= &quot;</span><span class="p">,</span><span class="n">keys</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s2">&quot;training score= &quot;</span><span class="p">,</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;test score= &quot;</span><span class="p">,</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k=  2 : training score=  0.8160919540229885 test score=  0.3103448275862069
-k=  3 : training score=  0.8045977011494253 test score=  0.3448275862068966
-k=  4 : training score=  0.735632183908046 test score=  0.3103448275862069
-k=  5 : training score=  0.7126436781609196 test score=  0.4827586206896552
-k=  6 : training score=  0.7126436781609196 test score=  0.4482758620689655
-k=  7 : training score=  0.7241379310344828 test score=  0.41379310344827586
-k=  8 : training score=  0.6666666666666666 test score=  0.4827586206896552
-k=  9 : training score=  0.6206896551724138 test score=  0.41379310344827586
-k=  10 : training score=  0.632183908045977 test score=  0.4482758620689655
-k=  11 : training score=  0.5517241379310345 test score=  0.4482758620689655
-k=  12 : training score=  0.6091954022988506 test score=  0.41379310344827586
-k=  13 : training score=  0.5632183908045977 test score=  0.5172413793103449
-k=  14 : training score=  0.5517241379310345 test score=  0.41379310344827586
-k=  15 : training score=  0.5517241379310345 test score=  0.5172413793103449
-k=  16 : training score=  0.5977011494252874 test score=  0.4827586206896552
-k=  17 : training score=  0.5632183908045977 test score=  0.4827586206896552
-k=  18 : training score=  0.6091954022988506 test score=  0.4482758620689655
-k=  19 : training score=  0.6091954022988506 test score=  0.4482758620689655
-k=  20 : training score=  0.5862068965517241 test score=  0.4482758620689655
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">training</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/UTS_17_0.png" src="_images/UTS_17_0.png" />
 </div>
 </div>
 </section>
