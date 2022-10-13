@@ -388,7 +388,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-784e6b02-48f4-4bc4-963d-47b1fb9911d2">
+  <div id="df-4fe28974-9c7f-47f9-b704-cbfa99e9ecf0">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -568,7 +568,7 @@ title="Print to PDF"
 </table>
 <p>116 rows × 10 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-784e6b02-48f4-4bc4-963d-47b1fb9911d2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4fe28974-9c7f-47f9-b704-cbfa99e9ecf0')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -619,12 +619,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-784e6b02-48f4-4bc4-963d-47b1fb9911d2 button.colab-df-convert');
+          document.querySelector('#df-4fe28974-9c7f-47f9-b704-cbfa99e9ecf0 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-784e6b02-48f4-4bc4-963d-47b1fb9911d2');
+          const element = document.querySelector('#df-4fe28974-9c7f-47f9-b704-cbfa99e9ecf0');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -745,7 +745,7 @@ title="Print to PDF"
             <span class="n">falsePred</span> <span class="o">+=</span> <span class="n">cm</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correct predictions: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;False predictions&#39;</span><span class="p">,</span> <span class="n">falsePred</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Akurasi Dari metode the Decision Tree Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="o">/</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>    
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Akurasi Dari metode Naive Bayes Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="o">/</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>    
 </pre></div>
 </div>
 </div>
@@ -753,7 +753,7 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correct predictions:  14
 False predictions 10
 
-Akurasi Dari metode the Decision Tree Clasification adalah:  0.5833333333333334
+Akurasi Dari metode Naive Bayes Clasification adalah:  0.5833333333333334
 </pre></div>
 </div>
 </div>
@@ -820,12 +820,12 @@ Akurasi Dari metode the Decision Tree Clasification adalah:  0.5833333333333334
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Akurasi Dari metode the Decision Tree Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_lab</span><span class="p">,</span> <span class="n">test_pred_decision_tree</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Akurasi Dari metode Decision Tree Clasification adalah: &#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_lab</span><span class="p">,</span> <span class="n">test_pred_decision_tree</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi Dari metode the Decision Tree Clasification adalah:  0.574468085106383
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi Dari metode Decision Tree Clasification adalah:  0.574468085106383
 </pre></div>
 </div>
 </div>
