@@ -1,0 +1,1024 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; 20-055 Penambangan Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'KK';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/robitt.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/robitt.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tugas1.html">Tugas 1 : Dissimiliarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Tugas 2 : Diskrititasi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas3.html">Tugas 3 : KNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas4.html">Tugas 4 : Probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas5.html">Tugas 5 : K-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas6.html">Tugas 6 : Decision Tree Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">Tugas : UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas7.html">Tugas 7</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/wahyuarilsaputra/datamining/blob/gh-pages/_sources/KK.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/wahyuarilsaputra/datamining" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/wahyuarilsaputra/datamining/issues/new?title=Issue%20on%20page%20%2FKK.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/KK.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataSenin</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Senin.csv&quot;</span>
+<span class="n">senin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataSenin</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataSelasa</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Selasa.csv&quot;</span>
+<span class="n">selasa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataSelasa</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataRabu</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Rabu.csv&quot;</span>
+<span class="n">rabu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataRabu</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataKamis</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Rabu.csv&quot;</span>
+<span class="n">kamis</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataKamis</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataJumat</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Jumat.csv&quot;</span>
+<span class="n">jumat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataJumat</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataSabtu</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Sabtu.csv&quot;</span>
+<span class="n">sabtu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataSabtu</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">dataMinggu</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/wahyuarilsaputra/dataset/main/Minggu.csv&quot;</span>
+<span class="n">minggu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataMinggu</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">minggu</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-4cc6aab8-08ff-4603-9dfe-2b4891b75e09" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tanggal</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Pekerjaan</th>
+      <th>JP_Dewasa</th>
+      <th>JP_Pelajar</th>
+      <th>Pesan Kesan</th>
+      <th>Jumlah per hari</th>
+      <th>Kategori</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>04-Sep-22</td>
+      <td>Ari A</td>
+      <td>Kediri</td>
+      <td>Polri</td>
+      <td>6</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>04-Sep-22</td>
+      <td>Yunanik</td>
+      <td>Jl.Slamet Riyadi,Pasuruan</td>
+      <td>Swasta</td>
+      <td>7</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>9</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>04-Sep-22</td>
+      <td>Suntol</td>
+      <td>Pati</td>
+      <td>Swasta</td>
+      <td>4</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>04-Sep-22</td>
+      <td>Novi</td>
+      <td>Jl.RadenWijaya gg 3</td>
+      <td>Pelajar</td>
+      <td>3</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>04-Sep-22</td>
+      <td>Revan</td>
+      <td>Dlanggu</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>01-Oct-22</td>
+      <td>Amien Widodo</td>
+      <td>ITSSurabaya</td>
+      <td>Dosen</td>
+      <td>120</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>120</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>01-Oct-22</td>
+      <td>Ilham Wahyudi</td>
+      <td>Megaluh</td>
+      <td>Swasta</td>
+      <td>2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>01-Oct-22</td>
+      <td>Uus Y</td>
+      <td>Bukit Patma,Surabaya</td>
+      <td>Swasta</td>
+      <td>4</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>01-Oct-22</td>
+      <td>Ika rahma (SMPN 8 Malang)</td>
+      <td>Malang</td>
+      <td>Siswa &amp; Guru</td>
+      <td>30</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>55</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>01-Oct-22</td>
+      <td>Moch.Mussyariful A</td>
+      <td>UTM</td>
+      <td>Mahasiswa</td>
+      <td>1</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>154 rows × 9 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-4cc6aab8-08ff-4603-9dfe-2b4891b75e09')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-4cc6aab8-08ff-4603-9dfe-2b4891b75e09 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-4cc6aab8-08ff-4603-9dfe-2b4891b75e09');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tanggal&#39;</span><span class="p">,</span><span class="s1">&#39;Nama&#39;</span><span class="p">,</span><span class="s1">&#39;Alamat&#39;</span><span class="p">,</span><span class="s1">&#39;Pekerjaan&#39;</span><span class="p">,</span><span class="s1">&#39;Pesan Kesan&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hasil = data.drop(columns = label)</span>
+<span class="n">hasilSenin</span> <span class="o">=</span> <span class="n">senin</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilSelasa</span> <span class="o">=</span> <span class="n">selasa</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilRabu</span> <span class="o">=</span> <span class="n">rabu</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilKamis</span> <span class="o">=</span> <span class="n">kamis</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilJumat</span> <span class="o">=</span> <span class="n">jumat</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilSabtu</span> <span class="o">=</span> <span class="n">sabtu</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="n">hasilMinggu</span> <span class="o">=</span> <span class="n">minggu</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">label</span><span class="p">)</span>
+<span class="c1">#Menghilangkan Missing Value</span>
+<span class="n">hasilSenin</span> <span class="o">=</span> <span class="n">hasilSenin</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilSelasa</span> <span class="o">=</span> <span class="n">hasilSelasa</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilRabu</span> <span class="o">=</span> <span class="n">hasilRabu</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilKamis</span> <span class="o">=</span> <span class="n">hasilKamis</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilJumat</span> <span class="o">=</span> <span class="n">hasilJumat</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilSabtu</span> <span class="o">=</span> <span class="n">hasilSabtu</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">hasilMinggu</span> <span class="o">=</span> <span class="n">hasilMinggu</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X1 = hasil.iloc[:,2:3].values</span>
+<span class="c1"># Y1 = hasil.iloc[:,3].values</span>
+<span class="n">XSenin</span> <span class="o">=</span> <span class="n">hasilSenin</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YSenin</span> <span class="o">=</span> <span class="n">hasilSenin</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XSelasa</span> <span class="o">=</span> <span class="n">hasilSelasa</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YSelasa</span> <span class="o">=</span> <span class="n">hasilSelasa</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XRabu</span> <span class="o">=</span> <span class="n">hasilRabu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YRabu</span> <span class="o">=</span> <span class="n">hasilRabu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XKamis</span> <span class="o">=</span> <span class="n">hasilKamis</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YKamis</span> <span class="o">=</span> <span class="n">hasilKamis</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XJumat</span> <span class="o">=</span> <span class="n">hasilJumat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YJumat</span> <span class="o">=</span> <span class="n">hasilJumat</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XSabtu</span> <span class="o">=</span> <span class="n">hasilSabtu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YSabtu</span> <span class="o">=</span> <span class="n">hasilSabtu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">XMinggu</span> <span class="o">=</span> <span class="n">hasilMinggu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">YMinggu</span> <span class="o">=</span> <span class="n">hasilMinggu</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X_train, X_test, y_train, y_test = train_test_split(X1, Y1, test_size = percent_amount_of_test_data, random_state=0)</span>
+<span class="n">X_train1</span><span class="p">,</span> <span class="n">X_test1</span><span class="p">,</span> <span class="n">y_train1</span><span class="p">,</span> <span class="n">y_test1</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XSenin</span><span class="p">,</span> <span class="n">YSenin</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train2</span><span class="p">,</span> <span class="n">X_test2</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">,</span> <span class="n">y_test2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XSelasa</span><span class="p">,</span> <span class="n">YSelasa</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train3</span><span class="p">,</span> <span class="n">X_test3</span><span class="p">,</span> <span class="n">y_train3</span><span class="p">,</span> <span class="n">y_test3</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XRabu</span><span class="p">,</span> <span class="n">YRabu</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train4</span><span class="p">,</span> <span class="n">X_test4</span><span class="p">,</span> <span class="n">y_train4</span><span class="p">,</span> <span class="n">y_test4</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XKamis</span><span class="p">,</span> <span class="n">YKamis</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train5</span><span class="p">,</span> <span class="n">X_test5</span><span class="p">,</span> <span class="n">y_train5</span><span class="p">,</span> <span class="n">y_test5</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XJumat</span><span class="p">,</span> <span class="n">YJumat</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train6</span><span class="p">,</span> <span class="n">X_test6</span><span class="p">,</span> <span class="n">y_train6</span><span class="p">,</span> <span class="n">y_test6</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XSabtu</span><span class="p">,</span> <span class="n">YSabtu</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train7</span><span class="p">,</span> <span class="n">X_test7</span><span class="p">,</span> <span class="n">y_train7</span><span class="p">,</span> <span class="n">y_test7</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">XMinggu</span><span class="p">,</span> <span class="n">YMinggu</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Dictionary to store model and its accuracy</span>
+
+<span class="n">model_accuracy</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+<span class="c1">### Dictionary to store model and its precision</span>
+
+<span class="n">model_precision</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+<span class="c1">### Dictionary to store model and its recall</span>
+
+<span class="n">model_recall</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Applying Decision Tree Classification model</span>
+
+<span class="n">decision_tree_classifier</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span> <span class="o">=</span> <span class="s1">&#39;entropy&#39;</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="c1"># tree = decision_tree_classifier.fit(X_train, y_train)</span>
+<span class="n">treeSenin</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train1</span><span class="p">,</span> <span class="n">y_train1</span><span class="p">)</span>
+<span class="n">treeSelasa</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train2</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">)</span>
+<span class="n">treeRabu</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train3</span><span class="p">,</span> <span class="n">y_train3</span><span class="p">)</span>
+<span class="n">treeKamis</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train4</span><span class="p">,</span> <span class="n">y_train4</span><span class="p">)</span>
+<span class="n">treeJumat</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train5</span><span class="p">,</span> <span class="n">y_train5</span><span class="p">)</span>
+<span class="n">treeSabtu</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train6</span><span class="p">,</span> <span class="n">y_train6</span><span class="p">)</span>
+<span class="n">treeMinggu</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train7</span><span class="p">,</span> <span class="n">y_train7</span><span class="p">)</span>
+
+
+<span class="c1">### Predicting the Test set results</span>
+<span class="c1"># Y_pred_dc = decision_tree_classifier.predict(X_test)</span>
+<span class="n">Y_pred_dc1</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test1</span><span class="p">)</span>
+<span class="n">Y_pred_dc2</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test2</span><span class="p">)</span>
+<span class="n">Y_pred_dc3</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test3</span><span class="p">)</span>
+<span class="n">Y_pred_dc4</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test4</span><span class="p">)</span>
+<span class="n">Y_pred_dc5</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test5</span><span class="p">)</span>
+<span class="n">Y_pred_dc6</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test6</span><span class="p">)</span>
+<span class="n">Y_pred_dc7</span> <span class="o">=</span> <span class="n">decision_tree_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Making the confusion matrix</span>
+<span class="n">cm1</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test1</span><span class="p">,</span> <span class="n">Y_pred_dc1</span><span class="p">)</span>
+<span class="c1"># cm2 = confusion_matrix(y_test2, Y_pred_dc2)a</span>
+<span class="c1"># cm3 = confusion_matrix(y_test3, Y_pred_dc3)</span>
+<span class="c1"># cm4 = confusion_matrix(y_test4, Y_pred_dc4)</span>
+<span class="c1"># cm5 = confusion_matrix(y_test5, Y_pred_dc5)</span>
+<span class="c1"># cm6 = confusion_matrix(y_test6, Y_pred_dc6)</span>
+<span class="c1"># cm7 = confusion_matrix(y_test7, Y_pred_dc7)</span>
+
+<span class="c1">### Printing the accuracy, precision, and recall of the model</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix for Decision Tree</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cm1</span><span class="p">)</span>
+
+<span class="n">decision_tree_accuracy</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test1</span><span class="p">,</span> <span class="n">Y_pred_dc1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model_accuracy</span><span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decision_tree_accuracy</span>
+
+<span class="n">decision_tree_precision</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test1</span><span class="p">,</span> <span class="n">Y_pred_dc1</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model_precision</span><span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decision_tree_precision</span>
+
+<span class="n">decision_tree_recall</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test1</span><span class="p">,</span> <span class="n">Y_pred_dc1</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s1">&#39;weighted&#39;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model_recall</span><span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decision_tree_recall</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The accuracy of this model is </span><span class="si">{}</span><span class="s1"> %.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">decision_tree_accuracy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The precision of this model is </span><span class="si">{}</span><span class="s1"> %.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">decision_tree_precision</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The recall of this model is </span><span class="si">{}</span><span class="s1"> %.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">decision_tree_recall</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion matrix for Decision Tree
+ [[8 0]
+ [0 2]]
+The accuracy of this model is 100.0 %.
+The precision of this model is 100.0 %.
+The recall of this model is 100.0 %.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FIRST_IDX</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_test_knn</span> <span class="o">=</span> <span class="n">treeSenin</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">20</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Customer : Putra Memiliki risk rating </span><span class="si">{</span><span class="n">result_test_knn</span><span class="p">[</span><span class="n">FIRST_IDX</span><span class="p">]</span><span class="si">}</span><span class="s2"> Pada metode Decision Tree model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Customer : Putra Memiliki risk rating 1 Pada metode Decision Tree model
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualisasi tree</span>
+<span class="n">VtreeSenin</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeSenin</span><span class="p">)</span>
+<span class="n">VtreeSelasa</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeSelasa</span><span class="p">)</span>
+<span class="n">VtreeRabu</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeRabu</span><span class="p">)</span>
+<span class="n">VtreeKamis</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeKamis</span><span class="p">)</span>
+<span class="n">VtreeJumat</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeJumat</span><span class="p">)</span>
+<span class="n">VtreeSabtu</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeSabtu</span><span class="p">)</span>
+<span class="n">VtreeMinggu</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">treeMinggu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ce1a2f50d91398ff01370f11b80a8b086d1af370c9b5027540758ba96bb683c7.png" src="_images/ce1a2f50d91398ff01370f11b80a8b086d1af370c9b5027540758ba96bb683c7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="c1"># with open(&#39;Senin.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeSenin,r)</span>
+<span class="c1"># with open(&#39;Selasa.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeSelasa,r)</span>
+<span class="c1"># with open(&#39;Rabu.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeRabu,r)</span>
+<span class="c1"># with open(&#39;Kamis.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeKamis,r)</span>
+<span class="c1"># with open(&#39;Jumat.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeJumat,r)</span>
+<span class="c1"># with open(&#39;Sabtu.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeSabtu,r)</span>
+<span class="c1"># with open(&#39;Minggu.pickle&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(treeMinggu,r)</span>
+<span class="c1"># with open(&#39;acc&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(decision_tree_accuracy,r)</span>
+
+<span class="c1"># with open(&#39;VisualSenin&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeSenin,r)</span>
+<span class="c1"># with open(&#39;VisualSelasa&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeSelasa,r)</span>
+<span class="c1"># with open(&#39;VisualRabu&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeRabu,r)</span>
+<span class="c1"># with open(&#39;VisualKamis&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeKamis,r)</span>
+<span class="c1"># with open(&#39;VisualJumat&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeJumat,r)</span>
+<span class="c1"># with open(&#39;VisualSabtu&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeSabtu,r)</span>
+<span class="c1"># with open(&#39;VisualMinggu&#39;,&#39;wb&#39;) as r:</span>
+<span class="c1">#   pickle.dump(VtreeMinggu,r)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Wahyu Aril Saputra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
